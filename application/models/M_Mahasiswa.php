@@ -27,12 +27,9 @@ class M_Mahasiswa extends CI_Model
     public function save()
     {
         $data = array(
-            "Nama" => $this->input->post('Nama'),
-            "JenisKelamin" => $this->input->post('JenisKelamin'),
-            "Alamat" => $this->input->post('Alamat'),
-            "Agama" => $this->input->post('Agama'),
-            "NoHp" => $this->input->post('NoHp'),
-            "Email" => $this->input->post('Email')
+            "nama" => $this->input->post('Nama'),
+            "alamat" => $this->input->post('Alamat'),
+            "nim" => $this->input->post('Nim'),
         );
         return $this->db->insert($this->table, $data);
     }

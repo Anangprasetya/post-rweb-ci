@@ -27,6 +27,15 @@ class Mahasiswa extends CI_Controller
     //method add digunakan untuk menampilkan form tambah data mahasiswa
     public function add()
     {
+        $data["title"] = "Tambah Data Mahasiswa";
+        $this->load->view('layouts/header', $data);
+        $this->load->view('layouts/menu');
+        $this->load->view('mahasiswa/add', $data);
+        $this->load->view('layouts/footer');
+    }
+
+    public function add_proses()
+    {
         $Mahasiswa = $this->M_Mahasiswa; //objek model
         $Mahasiswa->save();
         $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -35,11 +44,6 @@ class Mahasiswa extends CI_Controller
             <span aria-hidden="true">&times;</span>
           </button></div>');
         redirect("mahasiswa");
-        $data["title"] = "Tambah Data Mahasiswa";
-        $this->load->view('layouts/header', $data);
-        $this->load->view('layouts/menu');
-        $this->load->view('mahasiswa/add', $data);
-        $this->load->view('layouts/footer');
     }
 
     public function edit($id = null)
