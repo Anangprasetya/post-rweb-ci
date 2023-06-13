@@ -8,7 +8,7 @@ class M_Mahasiswa extends CI_Model
     //menampilkan data mahasiswa berdasarkan id mahasiswa
     public function getById($id)
     {
-        return $this->db->get_where($this->table, ["IdMhsw" => $id])->row();
+        return $this->db->get_where($this->table, ["id" => $id])->row();
         //query diatas seperti halnya query pada mysql 
         //select * from mahasiswa where IdMhsw='$id'
     }
@@ -39,18 +39,15 @@ class M_Mahasiswa extends CI_Model
     {
         $data = array(
             "Nama" => $this->input->post('Nama'),
-            "JenisKelamin" => $this->input->post('JenisKelamin'),
+            "Nim" => $this->input->post('Nim'),
             "Alamat" => $this->input->post('Alamat'),
-            "Agama" => $this->input->post('Agama'),
-            "NoHp" => $this->input->post('NoHp'),
-            "Email" => $this->input->post('Email')
         );
-        return $this->db->update($this->table, $data, array('IdMhsw' => $this->input->post('IdMhsw')));
+        return $this->db->update($this->table, $data, array('id' => $this->input->post('IdMhsw')));
     }
 
     //hapus data mahasiswa
     public function delete($id)
     {
-        return $this->db->delete($this->table, array("IdMhsw" => $id));
+        return $this->db->delete($this->table, array("id" => $id));
     }
 }

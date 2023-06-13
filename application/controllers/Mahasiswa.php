@@ -51,18 +51,6 @@ class Mahasiswa extends CI_Controller
         if (!isset($id)) redirect('mahasiswa');
 
         $Mahasiswa = $this->M_Mahasiswa;
-        $validation = $this->form_validation;
-        $validation->set_rules($Mahasiswa->rules());
-
-        if ($validation->run()) {
-            $Mahasiswa->update();
-            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            Data Mahasiswa berhasil disimpan.
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button></div>');
-            redirect("mahasiswa");
-        }
         $data["title"] = "Edit Data Mahasiswa";
         $data["data_mahasiswa"] = $Mahasiswa->getById($id);
         if (!$data["data_mahasiswa"]) show_404();
@@ -70,6 +58,18 @@ class Mahasiswa extends CI_Controller
         $this->load->view('layouts/menu');
         $this->load->view('mahasiswa/edit', $data);
         $this->load->view('layouts/footer');
+    }
+
+    public function edit_proses()
+    {
+        $Mahasiswa = $this->M_Mahasiswa;
+        $Mahasiswa->update();
+        $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            Data Mahasiswa berhasil diperbarui.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button></div>');
+        redirect("mahasiswa");
     }
 
     public function delete()
