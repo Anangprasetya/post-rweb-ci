@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 13, 2023 at 05:16 PM
+-- Generation Time: Jun 17, 2023 at 11:04 AM
 -- Server version: 8.0.33-0ubuntu0.20.04.2
 -- PHP Version: 7.4.3-4ubuntu2.18
 -- Developer: Anang Nur Prasetya
@@ -21,6 +21,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `bljr_postrwebci`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `password` varchar(350) NOT NULL,
+  `nama` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `email`, `password`, `nama`) VALUES
+(1, 'anangnur', 'anangnr.pras@gmail.com', '$2y$10$cjmsnqwowLatrHDGi41qvuiGhYxDG2KLhoz3afct/AZLZ9aDhx3Dy', 'Anang Nur Prasetya');
 
 -- --------------------------------------------------------
 
@@ -49,6 +70,12 @@ INSERT INTO `mahasiswa` (`id`, `nim`, `nama`, `alamat`) VALUES
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
@@ -57,6 +84,12 @@ ALTER TABLE `mahasiswa`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mahasiswa`

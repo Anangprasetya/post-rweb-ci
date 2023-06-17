@@ -76,3 +76,32 @@ Developer
 ***************
 
 Anang Nur Prasetya (Backend Developer)
+
+***************
+Cara Menjalankan Aplikasi
+***************
+
+- Download repositori ini dan ektrak di folder : **localhost**
+- Buka _phpmyadmin_ dan buat database dengan nama : **<nama_db_bebas>**
+- Import file sql pada db yang baru dibuat yang terletak pada folder **appdb/database.sql**
+- Buka file database yang terletak di **application/config/database.php**
+terdapat code
+```
+'username' => 'admin',
+'password' => 'password',
+'database' => 'bljr_postrwebci',
+```
+ganti dengan
+```
+'username' => 'root',
+'password' => '',
+'database' => '<nama_db_bebas>',
+```
+
+- Buka file config yang terletak di **application/config/config.php**
+cari kode berikut ``` $config['base_url'] = 'http://localhost/post-rweb/'; ```
+**ganti** dan sesuaikan dengan letak penyimpanan masing-masing yang mengarah ke repositori ini
+
+- Aplikasi berhasil jalan
+
+- Jika terjadi error setelah melakukan langkah diatas, hubungi saja developer dari repositori ini !
