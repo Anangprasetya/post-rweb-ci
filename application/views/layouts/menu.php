@@ -13,6 +13,9 @@
             <li class="nav-item active">
                 <a class="nav-link" href="<?= base_url('mahasiswa'); ?>">Mahasiswa</a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="<?= base_url('login/logout'); ?>">Logout</a>
+            </li>
         </ul>
     </div>
 </nav>

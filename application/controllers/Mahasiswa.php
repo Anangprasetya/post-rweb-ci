@@ -7,6 +7,8 @@ class Mahasiswa extends CI_Controller
     {
         parent::__construct();
         $this->load->model("M_Mahasiswa"); //load model mahasiswa
+        $this->load->model('M_Auth');
+        $this->M_Auth->cek_login();
     }
 
     //method pertama yang akan di eksekusi
